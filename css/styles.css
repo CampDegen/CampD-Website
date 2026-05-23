@@ -1,0 +1,637 @@
+/* CampD public interface — retro industrial (WW2–Early Cold War / 1970s manual aesthetic) */
+
+:root {
+  /* Aged palette: slightly warmed and faded vs digital-native hex */
+  --bg-base: #181614;
+  --bg-paper: #1f1c18;
+  --bg-elevated: #262220;
+  --bg-panel: #2c2a24;
+  --text-primary: #e5dcc8;
+  --text-muted: #8a8478;
+  --text-faded: #6b665c;
+  --border: #4a463c;
+  --border-heavy: #5c574c;
+  --accent-warm: #c4b08a;
+  --accent-cta: #d4560a;
+  --accent-cta-hover: #c49a14;
+  --accent-link: #4aada6;
+  --accent-secondary: #3a5580;
+  --accent-danger: #9e4b4b;
+  --accent-highlight: #c49a14;
+  --ink: #141210;
+  --crt-glow: rgba(74, 173, 166, 0.15);
+
+  --font-body: "Rajdhani", "Segoe UI", sans-serif;
+  --font-heading: "Bebas Neue", "Rajdhani", sans-serif;
+  --font-mono: "Share Tech Mono", "Courier New", monospace;
+
+  --max-width: 68rem;
+  --header-height: 4.25rem;
+  --radius: 0;
+  --shadow-print: 4px 4px 0 var(--ink);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+  /* Mimeograph / aged stock — warm vertical fade */
+  background-image: linear-gradient(
+    180deg,
+    #1a1714 0%,
+    var(--bg-base) 12%,
+    #151310 100%
+  );
+}
+
+/* Film grain + vignette (analog wear) */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+body::before {
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+body::after {
+  background: radial-gradient(
+    ellipse 90% 80% at 50% 45%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  opacity: 0.65;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--accent-warm);
+}
+
+a:focus-visible {
+  outline: 2px dashed var(--accent-highlight);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10001;
+  padding: 0.6rem 1rem;
+  background: var(--accent-cta);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-print);
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+/* —— Typography: bulletin / manual —— */
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faded);
+}
+
+.doc-meta span:not(:last-child)::after {
+  content: "/";
+  margin-left: 1rem;
+  color: var(--border);
+  font-weight: 400;
+}
+
+.classification {
+  display: inline-block;
+  margin: 0 0 0.85rem;
+  padding: 0.15rem 0.6rem 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  border: 2px solid currentColor;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  transform: rotate(-1.5deg);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.classification--public {
+  color: var(--accent-link);
+}
+
+.classification--field {
+  color: var(--accent-cta);
+}
+
+.classification--internal {
+  color: var(--accent-warm);
+}
+
+.stamp {
+  position: relative;
+}
+
+.stamp::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 1px dashed currentColor;
+  opacity: 0.35;
+  transform: rotate(0.8deg);
+  pointer-events: none;
+}
+
+/* —— Header: form masthead —— */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-paper);
+  border-bottom: 3px double var(--border-heavy);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: var(--header-height);
+  padding-block: 0.4rem;
+}
+
+.header-meta {
+  padding: 0.3rem 1rem;
+  border-top: 1px dashed var(--border);
+  background: var(--bg-elevated);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-shadow: 1px 1px 0 var(--ink);
+}
+
+.brand:hover {
+  color: var(--accent-warm);
+}
+
+.brand-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  filter: contrast(1.05) brightness(0.92);
+  opacity: 0.92;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.35rem 0.65rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--text-primary);
+  border-color: var(--accent-warm);
+  background: var(--bg-panel);
+}
+
+/* —— Hero: civil-defense bulletin card —— */
+.hero {
+  position: relative;
+  padding: clamp(2.5rem, 7vw, 5rem) 0;
+  border-bottom: 3px double var(--border-heavy);
+}
+
+/* Subtle CRT scanlines — analog monitoring, not cyberpunk */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.12) 2px,
+    rgba(0, 0, 0, 0.12) 4px
+  );
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--accent-cta),
+    var(--accent-cta) 8px,
+    var(--ink) 8px,
+    var(--ink) 16px,
+    var(--accent-highlight) 16px,
+    var(--accent-highlight) 24px,
+    var(--ink) 24px,
+    var(--ink) 32px
+  );
+}
+
+.hero-briefing {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 48rem) {
+  .hero-briefing {
+    grid-template-columns: 11rem 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.hero-emblem {
+  padding: 1rem;
+  border: 2px solid var(--border-heavy);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-print);
+}
+
+/* Registration marks (technical diagram corners) */
+.hero-emblem::before,
+.hero-emblem::after,
+.bulletin::before,
+.bulletin::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--text-faded);
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.hero-emblem {
+  position: relative;
+}
+
+.hero-emblem::before {
+  top: 4px;
+  left: 4px;
+  border-width: 2px 0 0 2px;
+}
+
+.hero-emblem::after {
+  bottom: 4px;
+  right: 4px;
+  border-width: 0 2px 2px 0;
+}
+
+.hero-logo {
+  width: 100%;
+  max-width: 9rem;
+  margin-inline: auto;
+  filter: contrast(1.08) brightness(0.88) sepia(0.12);
+  opacity: 0.95;
+}
+
+.bulletin {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 2px solid var(--border-heavy);
+  outline: 1px solid var(--border);
+  outline-offset: 4px;
+  background: var(--bg-paper);
+  box-shadow: var(--shadow-print);
+}
+
+.bulletin::before {
+  top: 8px;
+  right: 8px;
+  border-width: 2px 2px 0 0;
+}
+
+.bulletin::after {
+  bottom: 8px;
+  left: 8px;
+  border-width: 0 0 2px 2px;
+}
+
+.hero-content h1 {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-shadow:
+    2px 2px 0 var(--ink),
+    -1px -1px 0 color-mix(in srgb, var(--accent-warm) 30%, transparent);
+}
+
+.hero-tagline {
+  margin: 0 0 1rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+  color: var(--accent-warm);
+  max-width: 38ch;
+  letter-spacing: 0.02em;
+}
+
+.hero-lead {
+  margin: 0 0 1.75rem;
+  color: var(--text-muted);
+  max-width: 50ch;
+  font-weight: 500;
+}
+
+/* —— Buttons: stamped warning labels —— */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.25rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-print);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn-primary {
+  background: var(--accent-cta);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.btn-primary:hover {
+  background: var(--accent-cta-hover);
+  color: var(--ink);
+}
+
+.btn-outline {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-color: var(--ink);
+}
+
+.btn-outline:hover {
+  background: var(--bg-panel);
+  color: var(--accent-warm);
+}
+
+/* —— Sections: 1970s op-man layout —— */
+.section {
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+}
+
+.section-meta {
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.section-title {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 var(--ink);
+}
+
+.section-intro {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+  max-width: 55ch;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.panel {
+  background: var(--bg-paper);
+  border: 2px solid var(--border-heavy);
+  outline: 1px dashed var(--border);
+  outline-offset: 3px;
+  box-shadow: var(--shadow-print);
+}
+
+.about {
+  background: var(--bg-panel);
+  border-block: 2px double var(--border-heavy);
+}
+
+.about-panel {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-left: 6px solid var(--accent-secondary);
+}
+
+.about-panel p {
+  margin: 0 0 1rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.about-panel p:last-child {
+  margin-bottom: 0;
+}
+
+/* Connect cards: facility notice boards */
+.connect-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 40rem) {
+  .connect-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.card h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.35rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-muted);
+  flex-grow: 1;
+  font-size: 1rem;
+}
+
+.card .btn {
+  align-self: flex-start;
+  margin-top: 0.35rem;
+}
+
+.connect-email {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  word-break: break-all;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--border);
+}
+
+.connect-email:hover {
+  text-decoration-color: var(--accent-link);
+}
+
+/* —— Footer: archive stamp block —— */
+.site-footer {
+  margin-top: auto;
+  padding: 1.75rem 0 2.5rem;
+  background: var(--bg-paper);
+  border-top: 3px double var(--border-heavy);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.site-footer .container {
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+}
+
+.site-footer__domain {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  letter-spacing: 0.15em;
+  line-height: 1;
+}
+
+.site-footer__domain a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.site-footer__domain a:hover {
+  color: var(--accent-warm);
+}
+
+.site-footer__meta {
+  justify-content: center;
+}
+
+main {
+  display: block;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn {
+    transition: none;
+  }
+
+  body::before {
+    opacity: 0.03;
+  }
+}

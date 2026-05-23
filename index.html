@@ -1,33 +1,132 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Camp Degen Online</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="banner-box">
-           <h1>Welcome to the Campfire!</h1>
-        </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampD — Public Interface</title>
+  <meta name="description" content="CampD public interface. Semi-functional industrial and logistical operations. Authorized communications via secured channel.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://campdegen.com/">
+  <meta property="og:title" content="CampD — Public Interface">
+  <meta property="og:description" content="CampD public interface. Industrial infrastructure operations. Secured personnel communications.">
+  <meta property="og:image" content="https://campdegen.com/assets/CampD_Logo_White.png">
+  <meta property="og:site_name" content="CampD">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CampD — Public Interface">
+  <meta name="twitter:description" content="CampD public interface. Industrial infrastructure operations. Secured personnel communications.">
+  <meta name="twitter:image" content="https://campdegen.com/assets/CampD_Logo_White.png">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-        <div class="content">
-            <div class="wide-tile">
-                <p>This is a test site for the Camp Degen Online project. It is designed to demonstrate the capabilities of the Campfire framework and to provide a simple example of how to create a web page using HTML and CSS. Also I'm just trying to make this paragraph a decent length for testing purposes.</p>
-                <p>Feel free to explore the site and see what you can find!</p>
-            </div>
-            <div class="tile">
-                <h2>Test Box</h2>
-                <img src="img/Discord.png" alt="Test Image">
-                <p>This is a simple test box. It shows off the styling capabilities of the site.</p>
-            </div>
-            <div class="tile">
-                <h2>Test Box 2</h2>
-                <img src="img/Logo Halloween.png" alt="Test Image 2">
-                <p>This is another simple test box.</p>
-            </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="assets/CampD_Logo_White.png" alt="" width="44" height="44">
+        <span class="brand__name">CampD</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">Overview</a></li>
+          <li><a href="#connect">Communications</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="header-meta doc-meta" aria-hidden="true">
+      <span>CD-04-MEDIA</span>
+      <span>PUBLIC INTERFACE</span>
+      <span>REV 1.0</span>
+    </p>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-heading">
+      <div class="container hero-briefing">
+        <div class="hero-emblem" aria-hidden="true">
+          <img
+            class="hero-logo"
+            src="assets/CampD_Logo_White.png"
+            alt="CampD operational emblem"
+            width="466"
+            height="466"
+          >
         </div>
-        <div class="links">
-           <a class="floating-btn" href="https://discord.gg/XxmNDcpjGe"><img src="img/Discord-Symbol-White.png" alt="🔗"></a>
-           <a class="floating-btn" href="https://www.example.com"><img src="img/internal.png" alt="🛠️"></a>
+        <div class="hero-content bulletin">
+          <p class="classification classification--public stamp">PUBLIC</p>
+          <h1 id="hero-heading">CampD</h1>
+          <p class="hero-tagline">Industrial underground infrastructure. Operational persistence.</p>
+          <p class="hero-lead">
+            Public-facing interface for a semi-functional logistical entity operating within
+            persistent internal infrastructure. Coordination occurs through authorized channels.
+          </p>
+          <a class="btn btn-primary" href="https://discord.gg/XxmNDcpjGe">Access Discord Facility</a>
         </div>
-    </body>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <p class="doc-meta section-meta">
+          <span>CD-01-OPMAN</span>
+          <span>FACILITY OVERVIEW</span>
+        </p>
+        <h2 class="section-title" id="about-heading">Operational Overview</h2>
+        <p class="section-intro">Internal summary. Subject to revision without bulletin.</p>
+        <div class="about-panel panel">
+          <p>
+            CampD does not present as a conventional gaming group, esports brand, or entertainment
+            organization. Presentation standards convey semi-functional industrial and logistical
+            operations—operational legitimacy, analog-era practicality, and institutional persistence.
+          </p>
+          <p>
+            Assets and interfaces should appear reused, internally produced, and functionally maintained
+            rather than commercially branded. This site serves as the public trailhead; additional
+            systems documentation will be deployed to this interface as authorized.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section connect" id="connect" aria-labelledby="connect-heading">
+      <div class="container">
+        <p class="doc-meta section-meta">
+          <span>CD-04-MEDIA</span>
+          <span>COMMUNICATIONS</span>
+        </p>
+        <h2 class="section-title" id="connect-heading">Authorized Channels</h2>
+        <p class="section-intro">Primary coordination and official correspondence.</p>
+        <div class="connect-grid">
+          <article class="card card-discord panel">
+            <p class="classification classification--field">FIELD USE</p>
+            <h3>Secured Personnel Channel</h3>
+            <p>Discord facility for bulletins, operational coordination, and field personnel access.</p>
+            <a class="btn btn-outline" href="https://discord.gg/XxmNDcpjGe">Enter channel</a>
+          </article>
+          <article class="card card-email panel">
+            <p class="classification classification--internal">INTERNAL</p>
+            <h3>Official Correspondence</h3>
+            <p>Partnerships, press, and inquiries requiring documented response.</p>
+            <a class="connect-email" href="mailto:campdteam@campdegen.com">campdteam@campdegen.com</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__domain"><a href="https://campdegen.com/">campdegen.com</a></p>
+      <p class="site-footer__meta doc-meta">
+        <span>&copy; 2026 CampD</span>
+        <span>CLASSIFICATION: PUBLIC</span>
+        <span>ISSUE 2026-05</span>
+      </p>
+    </div>
+  </footer>
+</body>
 </html>
