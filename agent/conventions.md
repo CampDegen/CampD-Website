@@ -15,9 +15,13 @@
 | Change | Edit here | Not here |
 |---|---|---|
 | Homepage, site chrome | `index.html`, `css/styles.css` | — |
-| SPT catalog, pack UI, mod JSON | CampD-SPT-Pack repo | `spt-pack/` (sync overwrites) |
+| SPT catalog, pack UI, mod JSON, pack CSS/HTML | CampD-SPT-Pack repo | `spt-pack/` (sync overwrites) |
 | Forge version data | CampD-SPT-Pack (script + Action) | — |
 | Agent context / history | `agent/notes/` (new file) | Avoid rewriting old notes |
+
+After pack UI/CSS pushes: run **Sync SPT Pack** on this repo (Actions → Run workflow) or wait for 06:30 UTC cron before checking campdegen.com/spt-pack/.
+
+When changing global palette on the homepage, copy aged `:root` + body atmosphere into pack `css/themes/facility.css` (see [design-chrome.md](design-chrome.md)).
 
 ## Do not
 

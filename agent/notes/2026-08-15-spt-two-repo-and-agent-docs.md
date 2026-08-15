@@ -19,4 +19,5 @@ CampD briefly planned to merge CampD-SPT-Pack into this repo and delete the pack
 
 ## Follow-ups
 
-- [ ] Pack repo agent: rewrite pack `SPT_MERGE_KNOWLEDGE.md` and README merge paragraph to match two-repo model (if not done yet).
+- [x] Pack repo: rewrite `SPT_MERGE_KNOWLEDGE.md` and README for two-repo model (2026-08-15).
+- [x] Pack chrome alignment — see [2026-08-15-spt-pack-chrome-alignment.md](2026-08-15-spt-pack-chrome-alignment.md) and [design-chrome.md](../design-chrome.md).

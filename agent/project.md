@@ -34,7 +34,7 @@ Pages                       campdegen.com/spt-pack/
 
 Workflow: `.github/workflows/sync-spt-pack.yml`
 
-**Copied into `spt-pack/`:** `index.html`, `settings.html`, `css/`, `js/`, `data/`, `assets/`
+**Copied into `spt-pack/`:** `index.html`, `settings.html`, `looking.html`, `css/`, `js/`, `data/`, `assets/`
 
 **Not copied (pack repo only):** `.github/`, `scripts/`, `reference_data/`, pack README
 
@@ -46,9 +46,12 @@ Pack staging Pages: `https://campdegen.github.io/CampD-SPT-Pack/` (optional mirr
 
 ## Identity / design
 
-- Colors: `colors.md` (semantic tokens; use in CSS, not raw hex in HTML)
+- Colors: `colors.md` (semantic token names); live aged hex in `css/styles.css`
 - Homepage typography: Bebas Neue, Rajdhani, Share Tech Mono
 - Brand assets: `NOTICE` — not MIT-licensed
+- Chrome rules (homepage vs `/spt-pack/`): [design-chrome.md](design-chrome.md)
+
+**Header behavior:** homepage `.site-header` is sticky. Pack pages (source repo) use the same masthead styling but `position: relative` so the bar scrolls away. Pack has no site nav tabs in the masthead; Mods / Pack Settings / Looking to add use `.pack-nav` below the header.
 
 ## Human docs
 

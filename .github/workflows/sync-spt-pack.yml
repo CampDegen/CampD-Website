@@ -20,7 +20,7 @@ jobs:
           git clone --depth 1 https://github.com/CampDegen/CampD-SPT-Pack.git /tmp/spt-pack
           rm -rf spt-pack
           mkdir spt-pack
-          cp /tmp/spt-pack/index.html /tmp/spt-pack/settings.html spt-pack/
+          cp /tmp/spt-pack/index.html /tmp/spt-pack/settings.html /tmp/spt-pack/looking.html spt-pack/
           cp -R /tmp/spt-pack/css /tmp/spt-pack/js /tmp/spt-pack/data /tmp/spt-pack/assets spt-pack/
 
       - name: Commit if changed

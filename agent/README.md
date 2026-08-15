@@ -6,7 +6,8 @@ Modular context for Cursor agents. **Prefer adding files over editing existing o
 
 1. [project.md](project.md) — stable facts (repo role, URLs, pipeline, paths)
 2. [conventions.md](conventions.md) — git, accounts, editing rules
-3. [notes/](notes/) — chronological session/decision logs (newest filename last when sorted)
+3. [design-chrome.md](design-chrome.md) — homepage vs SPT pack masthead, tokens, publish flow
+4. [notes/](notes/) — chronological session/decision logs (newest filename last when sorted)
 
 Skip re-reading old notes if the task is narrow; read them when you need history or prior decisions.
 
@@ -24,4 +25,6 @@ Skip re-reading old notes if the task is narrow; read them when you need history
 | Repo | Agent docs |
 |---|---|
 | This site | `agent/` here |
-| CampD-SPT-Pack | pack repo’s own agent docs (if any); pack source, not this folder |
+| CampD-SPT-Pack | `SPT_AGENT_HANDOFF.md`, `SPT_MERGE_KNOWLEDGE.md` at pack repo root; pack source, not `spt-pack/` here |
+
+Local pack clone: `D:\My Documents\Projects\Games\Tarkov\CampD SPT Pack`

@@ -35,7 +35,7 @@ GitHub Pages                 serves https://campdegen.com/spt-pack/
 
 Workflow: [`.github/workflows/sync-spt-pack.yml`](.github/workflows/sync-spt-pack.yml)
 
-Copied from the pack repo: `index.html`, `settings.html`, `css/`, `js/`, `data/`, `assets/`.
+Copied from the pack repo: `index.html`, `settings.html`, `looking.html`, `css/`, `js/`, `data/`, `assets/`.
 
 Not copied (stay only in the pack repo): Forge script, pack GitHub Actions, `reference_data/`.
 
@@ -51,4 +51,4 @@ Change [`index.html`](index.html) and [`css/styles.css`](css/styles.css) in this
 
 ## Agent documentation
 
-Cursor agents: read [`KNOWLEDGE.md`](KNOWLEDGE.md) first, then [`agent/`](agent/). Stable facts live in `agent/project.md` and `agent/conventions.md`. Session history is append-only under `agent/notes/` (add a new dated file; avoid editing older notes).
+Cursor agents: read [`KNOWLEDGE.md`](KNOWLEDGE.md) first, then [`agent/`](agent/). Stable facts: `agent/project.md`, `agent/conventions.md`, `agent/design-chrome.md`. Session history: append-only under `agent/notes/`. Pack repo agent docs: `SPT_AGENT_HANDOFF.md`, `SPT_MERGE_KNOWLEDGE.md` in CampD-SPT-Pack.
