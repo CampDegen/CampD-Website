@@ -19,6 +19,7 @@ When pack `css/themes/facility.css` drifts, copy `:root` and body background/gra
 - One Safety Orange CTA per viewport (Discord on hero).
 - Fonts: Bebas Neue (headings), Rajdhani (body), Share Tech Mono (labels/nav/meta).
 - `font-size: 1.125rem` on **`body` only** (not `html`) so `rem` units match browser default root.
+- Aging overlays: real `.film-grain` / `.vignette` nodes + `assets/grain.png`. Do **not** use SVG `feTurbulence` data-URI backgrounds — Chromium often skips them on first paint (cooler/bluer page until refresh).
 
 ## SPT pack (`/spt-pack/`)
 
