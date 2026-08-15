@@ -1,0 +1,36 @@
+name: Sync SPT Pack
+
+on:
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+
+      - name: Copy public files from CampD-SPT-Pack
+        run: |
+          git clone --depth 1 https://github.com/CampDegen/CampD-SPT-Pack.git /tmp/spt-pack
+          rm -rf spt-pack
+          mkdir spt-pack
+          cp /tmp/spt-pack/index.html /tmp/spt-pack/settings.html spt-pack/
+          cp -R /tmp/spt-pack/css /tmp/spt-pack/js /tmp/spt-pack/data /tmp/spt-pack/assets spt-pack/
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add spt-pack
+          if git diff --staged --quiet; then
+            echo "No SPT pack changes."
+          else
+            git commit -m "Sync SPT pack public files from CampD-SPT-Pack"
+            git push
+          fi
