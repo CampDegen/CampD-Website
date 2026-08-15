@@ -15,7 +15,7 @@ When pack `css/themes/facility.css` drifts, copy `:root` and body background/gra
 
 - Edit: `index.html`, `css/styles.css` in **this repo**.
 - `.site-header`: **`position: sticky`** — masthead stays at top while scrolling.
-- Primary nav in header: Overview (`#about`), SPT Pack (`/spt-pack/`), Communications (`#connect`).
+- Primary nav in header: Overview (`#about`), Communications (`#connect`). SPT Pack lives on the hero **clipboard index** (`aside.clipboard` → `/spt-pack/`), not as a header button.
 - One Safety Orange CTA per viewport (Discord on hero).
 - Fonts: Bebas Neue (headings), Rajdhani (body), Share Tech Mono (labels/nav/meta).
 - `font-size: 1.125rem` on **`body` only** (not `html`) so `rem` units match browser default root.

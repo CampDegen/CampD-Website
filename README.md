@@ -49,7 +49,7 @@ The pack repo also has a staging Pages site at `https://campdegen.github.io/Camp
 
 ## Editing the homepage
 
-Change [`index.html`](index.html) and [`css/styles.css`](css/styles.css) in this repo and push `main`. Pages updates from that. Keep the header link to `/spt-pack/` (trailing slash).
+Change [`index.html`](index.html) and [`css/styles.css`](css/styles.css) in this repo and push `main`. Pages updates from that. SPT Pack is linked from the hero clipboard index (`/spt-pack/`, trailing slash), not the header.
 
 ## Agent documentation
 

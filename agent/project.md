@@ -51,7 +51,7 @@ Pack staging Pages: `https://campdegen.github.io/CampD-SPT-Pack/` (optional mirr
 - Brand assets: `NOTICE` — not MIT-licensed
 - Chrome rules (homepage vs `/spt-pack/`): [design-chrome.md](design-chrome.md)
 
-**Header behavior:** homepage `.site-header` is sticky. Pack pages (source repo) use the same masthead styling but `position: relative` so the bar scrolls away. Pack has no site nav tabs in the masthead; Mods / Pack Settings / Looking to add use `.pack-nav` below the header.
+**Header behavior:** homepage `.site-header` is sticky. Homepage header tabs: Overview, Communications. SPT Pack is on the hero clipboard index. Pack pages use the same masthead styling but `position: relative` so the bar scrolls away. Pack has no site nav tabs in the masthead; Mods / Pack Settings / Looking to add use `.pack-nav` below the header.
 
 ## Human docs
 

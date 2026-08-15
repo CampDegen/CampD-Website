@@ -330,6 +330,136 @@ a:focus-visible {
   }
 }
 
+@media (min-width: 64rem) {
+  .hero-briefing {
+    grid-template-columns: 11rem 1fr minmax(10.5rem, 12.5rem);
+    align-items: end;
+  }
+}
+
+/* Wall clipboard — systems shortcut index (not a header CTA) */
+.clipboard {
+  justify-self: end;
+  width: min(100%, 12.5rem);
+  transform: rotate(-1.4deg);
+}
+
+.clipboard-board {
+  position: relative;
+  padding: 1.15rem 0.55rem 0.45rem;
+  background:
+    linear-gradient(180deg, #3a3832 0%, #2c2a24 40%, #26231e 100%);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-print);
+}
+
+.clipboard-clip {
+  position: absolute;
+  top: -0.45rem;
+  left: 50%;
+  z-index: 2;
+  width: 2.75rem;
+  height: 1.05rem;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #9a9488 0%, #6e7885 55%, #4a463c 100%);
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.clipboard-clip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0.18rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  transform: translateX(-50%);
+  border: 2px solid var(--ink);
+  background: var(--bg-elevated);
+  border-radius: 50%;
+}
+
+.clipboard-paper {
+  position: relative;
+  margin: 0 0.15rem 0.15rem;
+  padding: 0.7rem 0.65rem 0.85rem;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 1.15rem,
+      color-mix(in srgb, var(--ink) 8%, transparent) 1.15rem 1.2rem
+    ),
+    linear-gradient(180deg, #e8dfc8 0%, #d4c7a8 100%);
+  color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 55%, #8a7a5c);
+  box-shadow:
+    inset 0 0 12px rgba(20, 18, 16, 0.08),
+    1px 2px 0 rgba(20, 18, 16, 0.25);
+  transform: rotate(0.6deg);
+}
+
+.clipboard-meta {
+  margin: 0 0 0.35rem;
+  color: color-mix(in srgb, var(--ink) 55%, #6b665c);
+}
+
+.clipboard-meta span:not(:last-child)::after {
+  color: color-mix(in srgb, var(--ink) 30%, transparent);
+}
+
+.clipboard-paper h2 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.clipboard-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clipboard-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  padding: 0.2rem 0 0.35rem;
+  border-bottom: 1px dotted color-mix(in srgb, var(--ink) 35%, transparent);
+}
+
+.clipboard-list a {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.clipboard-list a:hover,
+.clipboard-list a:focus-visible {
+  color: color-mix(in srgb, var(--ink) 70%, var(--accent-cta));
+}
+
+.clipboard-list span {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--ink) 62%, #6b665c);
+}
+
+@media (max-width: 63.98rem) {
+  .clipboard {
+    justify-self: center;
+  }
+}
+
 .hero-emblem {
   padding: 1rem;
   border: 2px solid var(--border-heavy);
@@ -653,5 +783,10 @@ main {
 
   .film-grain {
     opacity: 0.03;
+  }
+
+  .clipboard,
+  .clipboard-paper {
+    transform: none;
   }
 }
