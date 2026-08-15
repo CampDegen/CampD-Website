@@ -23,7 +23,7 @@ Then open `http://localhost:8080/` and `http://localhost:8080/spt-pack/`.
 
 ## How the SPT pack gets onto this site
 
-The pack is a **separate repository**: [CampDegen/CampD-SPT-Pack](https://github.com/CampDegen/CampD-SPT-Pack). That repo is the source (mod list, settings, Forge version check, pack CSS/JS).
+The pack is a **separate repository**: [CampDegen/CampD-SPT-Pack](https://github.com/CampDegen/CampD-SPT-Pack). Local clone: `D:\My Documents\Projects\Games\Tarkov\CampD SPT Pack`. That repo is the source (mod list, settings, Forge version check, pack CSS/JS). This website clone: `D:\My Documents\Projects\CampD\Websites\Current\CampD-Website`.
 
 This website does not build the pack. A GitHub Action **copies** the pack’s public files into `spt-pack/` and commits if they changed.
 

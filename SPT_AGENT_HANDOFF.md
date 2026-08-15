@@ -1,6 +1,17 @@
 # Handoff for the CampD-SPT-Pack agent
 
-Copy this file into the **CampD-SPT-Pack** project. It supersedes merge-and-delete in `SPT_MERGE_KNOWLEDGE.md`.
+Supersedes merge-and-delete in `SPT_MERGE_KNOWLEDGE.md`.
+
+## Delivery (done)
+
+CampD copied this file into the pack project. Do not copy it again.
+
+| | |
+|---|---|
+| Status | **Delivered** 2026-08-15 |
+| Pack copy | `D:\My Documents\Projects\Games\Tarkov\CampD SPT Pack\SPT_AGENT_HANDOFF.md` |
+| Website copy | `D:\My Documents\Projects\CampD\Websites\Current\CampD-Website\SPT_AGENT_HANDOFF.md` (keep; website-agent record) |
+| Website agent | Now **local** on CampD-Website (left the cloud VM). Token cannot push to CampD-SPT-Pack; that is why the copy was manual. |
 
 CampD talked to the CampD-Website agent and walked the merge back. The misunderstanding was on CampD’s side, not yours.
 
@@ -39,6 +50,8 @@ Not copied (stay in this pack repo): `.github/`, `scripts/`, `reference_data/`, 
 Manual sync: website repo → Actions → **Sync SPT Pack** → Run workflow.
 
 ## What you should do in CampD-SPT-Pack
+
+Handoff file is already here. Still do:
 
 1. Rewrite `SPT_MERGE_KNOWLEDGE.md` (and the README merge paragraph) so they match this file. **End state is two repos.** Strike every “delete CampD-SPT-Pack”, “move Forge onto the host”, and “host `spt-pack/` is the only source” instruction.
 2. Keep the Forge updater here (`scripts/update-forge-status.mjs`, `.github/workflows/update-forge.yml`). Actions need **write** so it can commit `data/forge-status.json`.

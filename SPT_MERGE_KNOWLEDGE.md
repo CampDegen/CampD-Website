@@ -2,7 +2,7 @@
 
 Agent-only. **Supersedes merge-and-delete.** CampD walked that back: two repos are the intended design.
 
-Handoff for the pack-repo agent: [SPT_AGENT_HANDOFF.md](SPT_AGENT_HANDOFF.md). Human pipeline notes: [README.md](README.md).
+Handoff for the pack-repo agent: [SPT_AGENT_HANDOFF.md](SPT_AGENT_HANDOFF.md). **Delivered** 2026-08-15 — CampD copied it to `D:\My Documents\Projects\Games\Tarkov\CampD SPT Pack\SPT_AGENT_HANDOFF.md`. Keep this repo’s copy. Website agent is **local** (not the cloud VM). Human pipeline notes: [README.md](README.md).
 
 ## End state (authoritative)
 
