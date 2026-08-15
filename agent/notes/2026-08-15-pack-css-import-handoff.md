@@ -9,7 +9,7 @@ CampD sees pack pages sometimes stay on default browser styling (blue links, whi
 
 ## Handoff file
 
-Copy to pack project or pack agent chat: [PACK_AGENT_CSS_HANDOFF.md](../../PACK_AGENT_CSS_HANDOFF.md) at website repo root.
+Copy to pack project or pack agent chat: [2026-08-15-pack-css-import.md](../handoffs/2026-08-15-pack-css-import.md).
 
 ## Follow-ups
 

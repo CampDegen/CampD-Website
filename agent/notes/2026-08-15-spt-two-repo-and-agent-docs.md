@@ -15,7 +15,7 @@ CampD briefly planned to merge CampD-SPT-Pack into this repo and delete the pack
 - **Forge updater stays** on CampD-SPT-Pack (`scripts/update-forge-status.mjs`, pack workflow).
 - **Handoff delivered** to `D:\My Documents\Projects\Games\Tarkov\CampD SPT Pack\SPT_AGENT_HANDOFF.md` (pack agent should align pack README/knowledge there; not this repo).
 - **Website docs for humans:** `README.md` describes Pages + sync pipeline.
-- **Website docs for agents:** `agent/` folder (this modular system). Removed root SPT_*.md files — history lives in this note.
+- **Website docs for agents:** `agent/` folder (this modular system). Outbound pack briefings archived under `agent/handoffs/`.
 
 ## Follow-ups
 

@@ -51,4 +51,4 @@ Change [`index.html`](index.html) and [`css/styles.css`](css/styles.css) in this
 
 ## Agent documentation
 
-Cursor agents: read [`KNOWLEDGE.md`](KNOWLEDGE.md) first, then [`agent/`](agent/). Stable facts: `agent/project.md`, `agent/conventions.md`, `agent/design-chrome.md`. Session history: append-only under `agent/notes/`. Pack repo agent docs: `SPT_AGENT_HANDOFF.md`, `SPT_MERGE_KNOWLEDGE.md` in CampD-SPT-Pack.
+Cursor agents: read [`KNOWLEDGE.md`](KNOWLEDGE.md) first, then [`agent/`](agent/). Stable facts: `agent/project.md`, `agent/conventions.md`, `agent/design-chrome.md`. Session history: `agent/notes/`. Outbound briefings to other repos: `agent/handoffs/`.

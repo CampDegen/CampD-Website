@@ -8,8 +8,9 @@ Modular context for Cursor agents. **Prefer adding files over editing existing o
 2. [conventions.md](conventions.md) — git, accounts, editing rules
 3. [design-chrome.md](design-chrome.md) — homepage vs SPT pack masthead, tokens, publish flow
 4. [notes/](notes/) — chronological session/decision logs (newest filename last when sorted)
+5. [handoffs/](handoffs/) — archive of briefings sent to other-repo agents (read if coordinating with CampD-SPT-Pack)
 
-Skip re-reading old notes if the task is narrow; read them when you need history or prior decisions.
+Skip re-reading old notes or handoffs if the task is narrow; read them when you need history or prior decisions.
 
 ## Add a note (do not rewrite baseline unless facts changed)
 
@@ -25,6 +26,6 @@ Skip re-reading old notes if the task is narrow; read them when you need history
 | Repo | Agent docs |
 |---|---|
 | This site | `agent/` here |
-| CampD-SPT-Pack | `SPT_AGENT_HANDOFF.md`, `SPT_MERGE_KNOWLEDGE.md` at pack repo root; pack source, not `spt-pack/` here |
+| CampD-SPT-Pack | Pack repo root docs + [handoffs/](handoffs/) here for what we sent them; pack source, not `spt-pack/` here |
 
 Local pack clone: `D:\My Documents\Projects\Games\Tarkov\CampD SPT Pack`
