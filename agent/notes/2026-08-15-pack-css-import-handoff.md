@@ -13,4 +13,4 @@ Copy to pack project or pack agent chat: [2026-08-15-pack-css-import.md](../hand
 
 ## Follow-ups
 
-- [ ] Pack agent implements fix, push, Sync SPT Pack on website.
+- [x] Pack agent implements fix, push, Sync SPT Pack on website (`fb9d873`).

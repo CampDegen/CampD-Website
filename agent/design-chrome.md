@@ -32,6 +32,8 @@ When pack `css/themes/facility.css` drifts, copy `:root` and body background/gra
 - Favicon: same PNG as homepage (`assets/favicon.png` in pack assets).
 - Skip link + `main#main-content` on pack pages.
 - No second Safety Orange button on pack pages; hazard tape on hero is OK.
+- Every pack HTML page links `css/themes/facility.css` **directly**. Do not route the live theme through `css/style.css` or another `@import`.
+- Keep the theme path relative. Root-absolute `/spt-pack/...` works in production but breaks the pack’s GitHub project Pages staging path.
 
 ## rem / scale pitfall
 

@@ -17,7 +17,7 @@ Archive of briefings **sent to agents on other repos** (or pasted into their cha
 | Date | File | Sent to | Status |
 |---|---|---|---|
 | 2026-08-15 | [2026-08-15-spt-two-repo.md](2026-08-15-spt-two-repo.md) | CampD-SPT-Pack | Delivered (copy in pack repo) |
-| 2026-08-15 | [2026-08-15-pack-css-import.md](2026-08-15-pack-css-import.md) | CampD-SPT-Pack | Pending fix in pack repo |
+| 2026-08-15 | [2026-08-15-pack-css-import.md](2026-08-15-pack-css-import.md) | CampD-SPT-Pack | Done — pack `ca99cd3`, sync `fb9d873` |
 
 ## Not stored here
 

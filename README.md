@@ -39,6 +39,8 @@ Copied from the pack repo: `index.html`, `settings.html`, `looking.html`, `css/`
 
 Not copied (stay only in the pack repo): Forge script, pack GitHub Actions, `reference_data/`.
 
+Pack pages link `css/themes/facility.css` directly with a relative URL. Do not reintroduce the former `css/style.css` → `@import` chain in the pack source or hand-edit the mirrored HTML here.
+
 The sync **deletes and recreates** `spt-pack/` every run. Do not hand-edit files under `spt-pack/` on this repo; the next sync will overwrite them. Edit the pack repo instead, then wait for the daily sync or run it manually:
 
 GitHub → this repo → **Actions** → **Sync SPT Pack** → **Run workflow**.
