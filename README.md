@@ -48,3 +48,7 @@ The pack repo also has a staging Pages site at `https://campdegen.github.io/Camp
 ## Editing the homepage
 
 Change [`index.html`](index.html) and [`css/styles.css`](css/styles.css) in this repo and push `main`. Pages updates from that. Keep the header link to `/spt-pack/` (trailing slash).
+
+## Agent documentation
+
+Cursor agents: read [`KNOWLEDGE.md`](KNOWLEDGE.md) first, then [`agent/`](agent/). Stable facts live in `agent/project.md` and `agent/conventions.md`. Session history is append-only under `agent/notes/` (add a new dated file; avoid editing older notes).
