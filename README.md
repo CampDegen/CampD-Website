@@ -49,7 +49,7 @@ The pack repo also has a staging Pages site at `https://campdegen.github.io/Camp
 
 ## Editing the homepage
 
-Change [`index.html`](index.html) and [`css/styles.css`](css/styles.css) in this repo and push `main`. Pages updates from that. SPT Pack is linked from the hero clipboard index (`/spt-pack/`, trailing slash), not the header.
+Change [`index.html`](index.html) and [`css/styles.css`](css/styles.css) in this repo and push `main`. Pages updates from that. SPT Pack is linked from the hero clipboard index (`/spt-pack/`, trailing slash), not the header. To add another shortcut, add a matching list item to `.clipboard-list`; reconstruction and responsive CSS constraints are in [`agent/design-chrome.md`](agent/design-chrome.md#homepage-clipboard-index).
 
 ## Agent documentation
 

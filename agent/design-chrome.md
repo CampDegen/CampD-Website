@@ -16,10 +16,48 @@ When pack `css/themes/facility.css` drifts, copy `:root` and body background/gra
 - Edit: `index.html`, `css/styles.css` in **this repo**.
 - `.site-header`: **`position: sticky`** — masthead stays at top while scrolling.
 - Primary nav in header: Overview (`#about`), Communications (`#connect`). SPT Pack lives on the hero **clipboard index** (`aside.clipboard` → `/spt-pack/`), not as a header button.
+- Clipboard uses a US Letter `8.5 / 11` aspect ratio. Its exposed board is dark, oil-worn wood/hardboard with steel clip hardware; the paper contains boxed shortcut links.
 - One Safety Orange CTA per viewport (Discord on hero).
 - Fonts: Bebas Neue (headings), Rajdhani (body), Share Tech Mono (labels/nav/meta).
 - `font-size: 1.125rem` on **`body` only** (not `html`) so `rem` units match browser default root.
 - Aging overlays: real `.film-grain` / `.vignette` nodes + `assets/grain.png`. Do **not** use SVG `feTurbulence` data-URI backgrounds — Chromium often skips them on first paint (cooler/bluer page until refresh).
+
+## Homepage clipboard index
+
+The clipboard is a homepage-only component. Recreate it with this DOM shape inside `.hero-briefing`, after `.hero-content`:
+
+```html
+<aside class="clipboard" aria-labelledby="index-heading">
+  <div class="clipboard-board">
+    <span class="clipboard-clip" aria-hidden="true"></span>
+    <div class="clipboard-paper">
+      <!-- document metadata + heading -->
+      <ol class="clipboard-list">
+        <li>
+          <a href="/spt-pack/">
+            <span class="clipboard-link-title">SPT Pack</span>
+            <span class="clipboard-link-detail">Mod catalog</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </div>
+</aside>
+```
+
+Add later shortcuts as additional `<li>` elements using the same link-title/link-detail structure.
+
+CSS constraints that matter:
+
+- At `64rem+`, `.hero-briefing` has three columns: `11rem minmax(0, 1fr) minmax(19rem, 20.75rem)`. The third child is the clipboard.
+- `.hero-emblem` must remain `align-self: start`; otherwise a stretched grid row moves the logo down.
+- `.clipboard` uses `aspect-ratio: 8.5 / 11`. Its desktop override (`width: 100%; height: auto; align-self: start`) must appear **after** the base `.clipboard` rule or the cascade will produce a narrow 1:2 board.
+- Do not set clipboard `height: 100%`. Width determines the Letter ratio; the resulting grid row lets the briefing card reach a similar height.
+- Below `64rem`, the clipboard stacks and centers at a maximum width of `13.75rem`.
+- `.clipboard-board::before` / `::after` are bottom rivets. `.clipboard-clip::before` is clip hardware; preserve those pseudo-elements when extending the component.
+- Shortcut anchors use a three-column internal grid: title, descriptor, `OPEN →`. Keep descriptors short enough for one line.
+- The component uses `color-mix()`, gradients, and `aspect-ratio`; new pages that need older-browser support must provide fallbacks.
+- Do not reuse `.hero-briefing` on another page without either supplying the same three-child layout or overriding its desktop grid.
 
 ## SPT pack (`/spt-pack/`)
 
